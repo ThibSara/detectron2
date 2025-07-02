@@ -278,9 +278,7 @@ class ShowAction(InferenceAction):
         extractor = context["extractor"]
         image_fpath = entry["file_name"]
         logger.info(f"Processing {image_fpath}")
-        # Taille de l'image originale
         h, w = entry["image"].shape[:2]
-        # Fond noir
         image = np.zeros((h, w, 3), dtype=np.uint8)
         data = extractor(outputs)
         image_vis = visualizer.visualize(image, data)
